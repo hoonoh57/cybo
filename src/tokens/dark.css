@@ -1,0 +1,23 @@
+[data-theme="dark"] {
+  /* Colors - Core (Maintain similar shades) */
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-secondary: #475569;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Colors - Neutrals (Dark mode overrides) */
+  --color-bg-base: #0f172a;
+  --color-bg-surface: #1e293b;
+  --color-border: #334155;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #64748b;
+}
+
+/* Base style for dark mode apps */
+body[data-theme="dark"] {
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+}

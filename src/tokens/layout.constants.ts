@@ -1,0 +1,17 @@
+export const LAYOUT_CONSTANTS = {
+  TOPBAR_HEIGHT: 48,
+  SIDEBAR_WIDTH: 240,
+  TIMELINE_HEIGHT: 240,
+  STATUSBAR_HEIGHT: 24,
+};
+
+export const BREAKPOINTS = {
+  SM: 640,
+  MD: 768,
+  LG: 1024,
+  XL: 1280,
+  XXL: 1536,
+};
+
+export const TOOLTIP_DELAY = 500;
+export const ANIMATION_DURATION = 200;

@@ -1,0 +1,4 @@
+.root {
+  /* Base styles for StatusBar */
+  font-family: var(--font-family);
+}

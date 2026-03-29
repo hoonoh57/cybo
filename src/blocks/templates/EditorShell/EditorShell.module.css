@@ -1,0 +1,4 @@
+.root {
+  /* Base styles for EditorShell */
+  font-family: var(--font-family);
+}
