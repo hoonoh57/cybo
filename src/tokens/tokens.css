@@ -1,44 +1,79 @@
+/* src/tokens/tokens.css */
+
 :root {
-  /* Colors - Core */
-  --color-primary: #3b82f6;
-  --color-primary-hover: #2563eb;
-  --color-secondary: #64748b;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
+  /* === 색상 시스템 === */
+  --cybo-bg-primary: #1a1a2e;
+  --cybo-bg-secondary: #16213e;
+  --cybo-bg-tertiary: #0f3460;
+  --cybo-surface: #222244;
+  --cybo-surface-hover: #2a2a5a;
+  --cybo-border: #2a2a4a;
+  --cybo-border-focus: #6c63ff;
 
-  /* Colors - Neutrals (Light Mode Default) */
-  --color-bg-base: #ffffff;
-  --color-bg-surface: #f8fafc;
-  --color-border: #e2e8f0;
-  --color-text-primary: #0f172a;
-  --color-text-secondary: #475569;
-  --color-text-muted: #94a3b8;
+  --cybo-text-primary: #e8e8f0;
+  --cybo-text-secondary: #8888aa;
+  --cybo-text-disabled: #555566;
 
-  /* Spacing */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
+  --cybo-accent: #6c63ff;
+  --cybo-accent-hover: #7b73ff;
+  --cybo-accent-warm: #ff6b6b;
+  --cybo-accent-green: #4ecdc4;
+  --cybo-accent-blue: #4a9eff;
 
-  /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-base: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
+  /* 타임라인 전용 */
+  --cybo-timeline-bg: #121228;
+  --cybo-track-main: #1e1e3a;
+  --cybo-track-sub: #141428;
+  --cybo-clip-video: #2a4a7a;
+  --cybo-clip-subtitle: #4a2a7a;
+  --cybo-clip-audio: #1a4a3a;
+  --cybo-clip-bgm: #1a2a4a;
+  --cybo-playhead: #ff6b6b;
 
-  /* Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-full: 9999px;
+  /* === 레이아웃 === */
+  --cybo-topbar-h: 44px;
+  --cybo-iconbar-w: 48px;
+  --cybo-left-panel-w: 232px;
+  --cybo-right-panel-w: 300px;
+  --cybo-timeline-min-h: 200px;
+  --cybo-timeline-h: 300px;
+  --cybo-toolbar-h: 32px;
+  --cybo-transport-h: 40px;
+  --cybo-statusbar-h: 24px;
+  --cybo-track-header-w: 120px;
+  --cybo-ruler-h: 24px;
 
-  /* Layout Constants */
-  --topbar-height: 48px;
-  --sidebar-width: 240px;
-  --timeline-height: 240px;
-  --statusbar-height: 24px;
+  /* === 타이포그래피 === */
+  --cybo-font-ui: 'Inter', 'Pretendard', system-ui, sans-serif;
+  --cybo-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --cybo-font-xs: 11px;
+  --cybo-font-sm: 12px;
+  --cybo-font-md: 13px;
+  --cybo-font-lg: 14px;
+  --cybo-font-xl: 16px;
+  --cybo-font-h: 20px;
+  --cybo-font-hero: 28px;
+
+  /* === 간격 === */
+  --cybo-gap-xs: 2px;
+  --cybo-gap-sm: 4px;
+  --cybo-gap-md: 8px;
+  --cybo-gap-lg: 12px;
+  --cybo-gap-xl: 16px;
+  --cybo-gap-2xl: 24px;
+
+  /* === 반경 === */
+  --cybo-radius-sm: 4px;
+  --cybo-radius-md: 8px;
+  --cybo-radius-lg: 12px;
+  --cybo-radius-xl: 16px;
+
+  /* === 그림자 === */
+  --cybo-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --cybo-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --cybo-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  /* === 트랜지션 === */
+  --cybo-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --cybo-duration: 150ms;
 }
