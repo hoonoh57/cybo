@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--cybo-gap-md);
+}
+.label {
+  font-size: var(--cybo-font-xs);
+  font-family: var(--cybo-font-mono);
+  color: var(--cybo-timeline-text-muted);
+}
+.value {
+  font-size: var(--cybo-font-xs);
+  font-family: var(--cybo-font-mono);
+  color: var(--cybo-timeline-text);
+  margin-left: var(--cybo-gap-md);
+  min-width: 36px;
+}
+.slider {
+  width: 96px;
+  height: 4px;
+  border-radius: 999px;
+  appearance: none;
+  background: var(--cybo-timeline-border);
+  cursor: pointer;
+  accent-color: var(--cybo-timeline-playhead);
+}

@@ -1,0 +1,33 @@
+.root {
+  position: relative;
+  height: 24px;
+  background: var(--cybo-timeline-ruler);
+  border-bottom: 1px solid var(--cybo-timeline-border);
+  cursor: pointer;
+  user-select: none;
+}
+.tick {
+  position: absolute;
+  top: 16px;
+  width: 1px;
+  height: 8px;
+  background: var(--cybo-timeline-border);
+}
+.major {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.label {
+  font-size: 10px;
+  font-family: var(--cybo-font-mono);
+  color: var(--cybo-timeline-text-muted);
+}
+.majorTick {
+  width: 1px;
+  height: 12px;
+  margin-top: 2px;
+  background: var(--cybo-timeline-text-muted);
+}

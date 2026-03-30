@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 8px;
+  background: var(--cybo-timeline-toolbar);
+  border-bottom: 1px solid var(--cybo-timeline-border);
+}
+.btn {
+  width: 28px; height: 28px; border: none; border-radius: var(--cybo-radius-sm);
+  background: transparent; color: var(--cybo-timeline-text-muted);
+  font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.btn:hover { background: rgba(255,255,255,0.1); }

@@ -1,0 +1,16 @@
+.root {
+  position: absolute;
+  top: 8px;
+  height: 48px;
+  border-radius: var(--cybo-radius-md);
+  background: var(--cybo-timeline-clip-subtitle);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.selected { box-shadow: 0 0 12px var(--cybo-timeline-selected-glow); outline: 2px solid var(--cybo-timeline-selected-glow); }
+.hovered { filter: brightness(1.1); }
+.name { font-size: 12px; font-weight: 500; color: var(--cybo-timeline-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

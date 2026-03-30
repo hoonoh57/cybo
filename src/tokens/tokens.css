@@ -37,6 +37,22 @@
   --cybo-right-panel-w: 300px;
   --cybo-timeline-min-h: 200px;
   --cybo-timeline-h: 300px;
+
+  --cybo-timeline-track-main: #1e1e3a;
+  --cybo-timeline-track-sub: #161630;
+  --cybo-timeline-clip-video: #2a4a7a;
+  --cybo-timeline-clip-subtitle: #4a2a7a;
+  --cybo-timeline-clip-bgm: #1a4a3a;
+  --cybo-timeline-clip-effect: #1a2a4a;
+  --cybo-timeline-clip-overlay: #4a3a2a;
+  --cybo-timeline-playhead: #ff6b6b;
+  --cybo-timeline-ruler: #1a1a35;
+  --cybo-timeline-toolbar: #181830;
+  --cybo-timeline-border: #2a2a4a;
+  --cybo-timeline-text: #e0e0f0;
+  --cybo-timeline-text-muted: #8080a0;
+  --cybo-timeline-selected-glow: rgba(100, 150, 255, 0.5);
+
   --cybo-toolbar-h: 32px;
   --cybo-transport-h: 40px;
   --cybo-statusbar-h: 24px;

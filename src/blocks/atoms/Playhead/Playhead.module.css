@@ -1,0 +1,24 @@
+.root {
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.handle {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--cybo-radius-sm);
+  background: var(--cybo-timeline-playhead);
+  cursor: grab;
+  pointer-events: auto;
+  flex-shrink: 0;
+}
+.handle:active { cursor: grabbing; }
+.line {
+  width: 2px;
+  flex: 1;
+  background: var(--cybo-timeline-playhead);
+}

@@ -1,0 +1,7 @@
+.root {
+  position: relative;
+  height: 64px;
+  border-bottom: 1px solid var(--cybo-timeline-border);
+}
+.main { background: var(--cybo-timeline-track-main); }
+.sub { background: var(--cybo-timeline-track-sub); }
