@@ -132,7 +132,7 @@ export function RightPanel() {
   };
   
   return (
-    <div className="w-[420px] h-full flex flex-col bg-[#0a0a1c] panel-depth">
+    <div className="w-full h-full flex flex-col bg-[#0a0a1c] panel-depth">
       {/* Header */}
       <div className="flex items-center justify-between px-4 h-11 border-b border-[#1a1a30]">
         <span className="text-[11px] font-semibold uppercase tracking-widest text-[#505070]">

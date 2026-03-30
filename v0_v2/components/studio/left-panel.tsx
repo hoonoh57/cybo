@@ -299,7 +299,7 @@ export function LeftPanel() {
   const stats = useProjectStats();
   
   return (
-    <div className="w-[260px] h-full flex flex-col bg-[#0c0c1e] panel-depth">
+    <div className="w-full h-full flex flex-col bg-[#0c0c1e] panel-depth">
       {/* Header */}
       <div className="flex items-center justify-between px-4 h-12 border-b border-[#1a1a30]">
         <span className="text-[15px] font-semibold text-white">CYBO Studio</span>
