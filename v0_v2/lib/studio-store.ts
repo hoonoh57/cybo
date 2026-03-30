@@ -82,25 +82,10 @@ const initialProjects: Project[] = [
             id: 'node-2-1', 
             name: 'TransportBar', 
             status: 'done', 
-            filePath: 'components/TransportBar.tsx', 
-            fileSize: 1320, 
-            lastModified: new Date('2024-03-16'), 
-            versionCount: 4,
-            code: `export function TransportBar() {
-  return (
-    <div className="flex items-center gap-4 p-3 bg-[#111128] border-b border-[#2a2a4a]">
-      <button className="w-10 h-10 rounded-full bg-[#6c63ff] flex items-center justify-center">
-        <PlayIcon className="w-5 h-5 text-white" />
-      </button>
-      <div className="font-mono text-lg text-white">00:01:24:15</div>
-      <select className="bg-[#1e1e3a] border border-[#2a2a4a] rounded px-2 py-1 text-white">
-        <option>1.0x</option>
-        <option>0.5x</option>
-        <option>2.0x</option>
-      </select>
-    </div>
-  );
-}`
+            filePath: 'components/cybo/transport-bar.tsx', 
+            fileSize: 9625, 
+            lastModified: new Date('2025-03-30'), 
+            versionCount: 5,
           },
           { id: 'node-2-2', name: 'TrackArea', status: 'done', filePath: 'components/TrackArea.tsx', fileSize: 3200, lastModified: new Date('2024-03-15'), versionCount: 3 },
           { id: 'node-2-3', name: 'ZoomControls', status: 'done', filePath: 'components/ZoomControls.tsx', fileSize: 680, lastModified: new Date('2024-03-14'), versionCount: 2 },
