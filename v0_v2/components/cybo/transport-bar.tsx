@@ -16,11 +16,11 @@ import {
 import { cn } from '@/lib/utils';
 
 export interface TransportBarProps {
-  currentTime?: number;
+  currentTime?: number; 
   totalDuration?: number;
   isPlaying?: boolean;
   speed?: number;
-  volume?: number;
+  volume?: number; 
   isMuted?: boolean;
   loopA?: number | null;
   loopB?: number | null;
