@@ -42,11 +42,16 @@ export function validateComponent(parsed: ParsedComponent): ValidationResult {
     score -= 20;
   }
 
-  const returnMatch = code.match(
-    /return\s*\(\s*<(\w+)\s+className="([^"]+)"/
+  // 최외곽 컨테이너 검사 — cn() 패턴과 직접 className 모두 지원
+  const directMatch = code.match(
+    /return\s*\(\s*<(\w+)\s+[^>]*className="([^"]+)"/
   );
-  if (returnMatch) {
-    const rootClasses = returnMatch[2];
+  const cnMatch = code.match(
+    /return\s*\(\s*<(\w+)\s+[^>]*className=\{cn\(\s*['"]([^'"]+)['"]/
+  );
+  const rootClasses = directMatch?.[2] || cnMatch?.[2] || '';
+
+  if (rootClasses) {
     if (/w-\[\d+px\]/.test(rootClasses) || /w-\[\d+rem\]/.test(rootClasses)) {
       errors.push('RULE_002: 최외곽에 고정 너비 사용');
       score -= 20;
@@ -74,9 +79,22 @@ export function validateComponent(parsed: ParsedComponent): ValidationResult {
     score -= 20;
   }
 
+  // RULE_007: 인라인 style 검사
+  // 디자인 토큰(BRAND, BG, TEXT, BORDER, TRACK_COLORS, Z, colors.) 참조 허용
+  // 동적 위치/크기(left, width, height, top, bottom, zIndex) 허용
   if (/style=\{/.test(code)) {
-    errors.push('RULE_007: 인라인 style 사용');
-    score -= 10;
+    const usesDesignTokens =
+      code.includes('@/lib/design-tokens') ||
+      code.includes('@/lib/design-system') ||
+      code.includes('BRAND') ||
+      code.includes('TRACK_COLORS') ||
+      code.includes('BG.') ||
+      code.includes('TEXT.') ||
+      code.includes('BORDER.');
+    if (!usesDesignTokens) {
+      errors.push('RULE_007: 인라인 style 사용 (디자인 토큰 미참조)');
+      score -= 10;
+    }
   }
 
   if (/<svg[\s>]/.test(code) && !code.includes('lucide')) {
