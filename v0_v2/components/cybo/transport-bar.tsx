@@ -203,7 +203,7 @@ export function TransportBar({
       {/* Divider */}
       <div className="w-px h-6 bg-[#2a2a4a] mx-1" />
 
-      {/* Speed selector */}
+      {/* Speed selector — ★ 수정: 아래로 열림 + 바깥 클릭 닫기 */}
       <div className="relative">
         <button
           onClick={() => setShowSpeedMenu((prev) => !prev)}
@@ -214,21 +214,27 @@ export function TransportBar({
           <ChevronDown className="w-3 h-3 text-[#505070]" />
         </button>
         {showSpeedMenu && (
-          <div className="absolute bottom-full left-0 mb-1 py-1 rounded bg-[#12122a] border border-[#2a2a4a] shadow-lg z-50">
-            {SPEEDS.map((s) => (
-              <button
-                key={s}
-                onClick={() => handleSpeedSelect(s)}
-                className={cn(
-                  'w-full px-4 py-1.5 text-xs font-mono text-left hover:bg-[#1a1a3a] transition-colors',
-                  s === localSpeed
-                    ? 'text-[#6c63ff]'
-                    : 'text-[#808098]'
-                )}
-              >
-                {s}x
-              </button>
-            ))}
+          <div>
+            <div
+              className="fixed inset-0 z-40"
+              onClick={() => setShowSpeedMenu(false)}
+            />
+            <div className="absolute top-full left-0 mt-1 py-1 rounded bg-[#12122a] border border-[#2a2a4a] shadow-lg shadow-black/50 z-50 min-w-[72px]">
+              {SPEEDS.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => handleSpeedSelect(s)}
+                  className={cn(
+                    'w-full px-4 py-1.5 text-xs font-mono text-left hover:bg-[#1a1a3a] transition-colors',
+                    s === localSpeed
+                      ? 'text-[#6c63ff]'
+                      : 'text-[#808098]'
+                  )}
+                >
+                  {s}x
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
