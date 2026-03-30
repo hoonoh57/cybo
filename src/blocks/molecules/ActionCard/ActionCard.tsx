@@ -1,24 +1,41 @@
-import { ComponentConfig } from '@measured/puck';
-import { ActionCard, ActionCardProps } from './ActionCard';
+import React, { useState } from 'react';
+import styles from './ActionCard.module.css';
 
-export const ActionCardPuck: ComponentConfig<ActionCardProps> = {
-    fields: {
-        icon: { type: 'text' },
-        title: { type: 'text' },
-        subtitle: { type: 'text' },
-        variant: {
-            type: 'select',
-            options: [
-                { label: 'Gradient', value: 'gradient' },
-                { label: 'Surface', value: 'surface' },
-            ],
-        },
-    },
-    defaultProps: {
-        icon: '✨',
-        title: 'AI가 만들어줘요',
-        subtitle: '아이디어만 말해주세요',
-        variant: 'gradient',
-    },
-    render: (props) => <ActionCard {...props} />,
+export interface ActionCardProps {
+    icon: string;
+    title: string;
+    subtitle: string;
+    variant?: 'gradient' | 'surface';
+    onClick?: () => void;
+}
+
+export const ActionCard: React.FC<ActionCardProps> = ({
+    icon,
+    title,
+    subtitle,
+    variant = 'surface',
+    onClick,
+}) => {
+    const [hovered, setHovered] = useState(false);
+
+    const rootClass = [
+        styles.root,
+        styles[variant],
+        hovered ? styles.hovered : '',
+    ].join(' ');
+
+    return (
+        <div
+            className={rootClass}
+            onClick={onClick}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+        >
+            <div className={styles.decorCircle1} />
+            <div className={styles.decorCircle2} />
+            <span className={styles.icon}>{icon}</span>
+            <h2 className={styles.title}>{title}</h2>
+            <p className={styles.subtitle}>{subtitle}</p>
+        </div>
+    );
 };
