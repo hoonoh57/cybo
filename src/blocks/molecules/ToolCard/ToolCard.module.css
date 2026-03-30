@@ -1,0 +1,36 @@
+.root {
+    aspect-ratio: 1;
+    border-radius: var(--cybo-radius-lg);
+    background: var(--cybo-bg-secondary);
+    border: 1px solid var(--cybo-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cybo-gap-lg);
+    cursor: pointer;
+    transition: var(--cybo-transition);
+    box-shadow: var(--cybo-shadow-sm);
+}
+
+.root.hovered {
+    transform: translateY(-4px);
+    background: var(--cybo-bg-card-hover);
+    border-color: var(--cybo-border-hover);
+    box-shadow: var(--cybo-shadow-hover);
+}
+
+.icon {
+    font-size: 28px;
+}
+
+.label {
+    font-size: var(--cybo-font-md);
+    font-weight: 600;
+    color: var(--cybo-text-secondary);
+    transition: var(--cybo-duration) var(--cybo-ease);
+}
+
+.root.hovered .label {
+    color: var(--cybo-text-primary);
+}

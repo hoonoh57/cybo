@@ -1,0 +1,89 @@
+.root {
+    min-height: 200px;
+    border-radius: var(--cybo-radius-xl);
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--cybo-transition);
+    border: 1px solid var(--cybo-border);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--cybo-shadow-md);
+}
+
+.root.hovered {
+    transform: translateY(-4px);
+}
+
+/* Gradient variant (AI card) */
+.gradient {
+    background: var(--cybo-accent-gradient);
+}
+
+.gradient.hovered {
+    box-shadow: 0 16px 48px rgba(108, 99, 255, 0.35);
+}
+
+.gradient .subtitle {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Surface variant (manual card) */
+.surface {
+    background: var(--cybo-bg-secondary);
+}
+
+.surface.hovered {
+    box-shadow: var(--cybo-shadow-hover);
+    border-color: var(--cybo-border-hover);
+}
+
+.surface .subtitle {
+    color: var(--cybo-text-secondary);
+}
+
+/* Decoration */
+.decorCircle1 {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.decorCircle2 {
+    position: absolute;
+    bottom: -30px;
+    right: 60px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+/* Content */
+.icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    color: var(--cybo-text-primary);
+}
+
+.subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+}

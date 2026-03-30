@@ -4,11 +4,12 @@ import { TopBar } from './TopBar';
 const meta: Meta<typeof TopBar> = {
   title: 'Organisms/TopBar',
   component: TopBar,
+  tags: ['autodocs'],
 };
 
 export default meta;
 type Story = StoryObj<typeof TopBar>;
 
 export const Default: Story = {
-  args: {},
+  args: { appName: 'AI-Studio', userInitial: 'U' },
 };

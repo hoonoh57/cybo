@@ -76,4 +76,17 @@
   /* === 트랜지션 === */
   --cybo-ease: cubic-bezier(0.4, 0, 0.2, 1);
   --cybo-duration: 150ms;
+
+  /* === atoms.dev 대시보드 추가 토큰 === */
+  --cybo-bg-card: #0f3460;
+  --cybo-bg-card-hover: #133a6a;
+  --cybo-accent-gradient: linear-gradient(135deg, #6c63ff, #3b82f6);
+  --cybo-success: #00c853;
+  --cybo-success-bg: rgba(0, 200, 83, 0.12);
+  --cybo-text-muted: #64748b;
+  --cybo-border-hover: rgba(255, 255, 255, 0.15);
+  --cybo-shadow-hover: 0 12px 40px rgba(108, 99, 255, 0.15);
+  --cybo-radius-xl: 20px;
+  --cybo-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
 }

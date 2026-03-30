@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--cybo-gap-md);
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: var(--cybo-success-bg);
+    border: 1px solid rgba(0, 200, 83, 0.25);
+    font-size: var(--cybo-font-md);
+    font-weight: 500;
+    color: var(--cybo-success);
+}

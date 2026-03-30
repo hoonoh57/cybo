@@ -1,0 +1,22 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cybo-text-primary);
+}
+
+.action {
+    font-size: var(--cybo-font-md);
+    color: var(--cybo-text-muted);
+    cursor: pointer;
+    transition: var(--cybo-duration) var(--cybo-ease);
+}
+
+.action:hover {
+    color: var(--cybo-accent);
+}

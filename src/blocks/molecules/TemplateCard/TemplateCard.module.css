@@ -1,0 +1,46 @@
+.root {
+    border-radius: var(--cybo-radius-lg);
+    background: var(--cybo-bg-secondary);
+    border: 1px solid var(--cybo-border);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--cybo-gap-lg);
+    cursor: pointer;
+    transition: var(--cybo-transition);
+    box-shadow: var(--cybo-shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.root.hovered {
+    transform: translateY(-4px);
+    border-color: var(--cybo-border-hover);
+    box-shadow: var(--cybo-shadow-hover);
+}
+
+.topAccent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transition: var(--cybo-transition);
+}
+
+.icon {
+    font-size: 32px;
+}
+
+.label {
+    font-size: var(--cybo-font-lg);
+    font-weight: 600;
+    color: var(--cybo-text-secondary);
+    transition: var(--cybo-duration) var(--cybo-ease);
+}
+
+.root.hovered .label {
+    color: var(--cybo-text-primary);
+}

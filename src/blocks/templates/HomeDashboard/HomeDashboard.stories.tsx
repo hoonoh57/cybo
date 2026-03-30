@@ -4,11 +4,13 @@ import { HomeDashboard } from './HomeDashboard';
 const meta: Meta<typeof HomeDashboard> = {
   title: 'Templates/HomeDashboard',
   component: HomeDashboard,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof HomeDashboard>;
 
-export const Default: Story = {
-  args: {},
-};
+export const Default: Story = {};

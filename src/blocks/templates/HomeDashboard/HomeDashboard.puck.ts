@@ -1,7 +1,8 @@
-import { ComponentConfig } from '@puckjs/core';
+import { ComponentConfig } from '@measured/puck';
 import { HomeDashboard, HomeDashboardProps } from './HomeDashboard';
 
 export const HomeDashboardPuck: ComponentConfig<HomeDashboardProps> = {
   fields: {},
-  render: (props) => <HomeDashboard {...props} />,
+  defaultProps: {},
+  render: () => <HomeDashboard />,
 };
