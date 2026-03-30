@@ -1,10 +1,10 @@
 'use client';
 
-import { useRef, useCallback } from 'react';
+import { useCallback, useRef, useEffect } from 'react';
 import {
   DockviewReact,
-  DockviewReadyEvent,
-  IDockviewPanelProps,
+  type DockviewReadyEvent,
+  type IDockviewPanelProps,
 } from 'dockview-react';
 import 'dockview-core/dist/styles/dockview.css';
 import { LeftPanel } from '@/components/studio/left-panel';
@@ -12,83 +12,68 @@ import { CenterPanel } from '@/components/studio/center-panel';
 import { RightPanel } from '@/components/studio/right-panel';
 import { StatusBar } from '@/components/studio/status-bar';
 import { StructureDialog } from '@/components/studio/structure-dialog';
+import { AiPanel } from '@/components/studio/ai-panel';
 
 function ExplorerPanel(props: IDockviewPanelProps) {
-  return (
-    <div className="h-full overflow-hidden bg-[#0c0c1e]">
-      <LeftPanel />
-    </div>
-  );
+  return <LeftPanel />;
 }
 
 function EditorPanel(props: IDockviewPanelProps) {
-  return (
-    <div className="h-full overflow-hidden bg-[#0a0a1a]">
-      <CenterPanel />
-    </div>
-  );
+  return <CenterPanel />;
 }
 
 function PreviewPanel(props: IDockviewPanelProps) {
-  return (
-    <div className="h-full overflow-hidden bg-[#0a0a1c]">
-      <RightPanel />
-    </div>
-  );
+  return <RightPanel />;
+}
+
+function AiAgentPanel(props: IDockviewPanelProps) {
+  return <AiPanel />;
 }
 
 const components: Record<string, React.FC<IDockviewPanelProps>> = {
   explorer: ExplorerPanel,
   editor: EditorPanel,
   preview: PreviewPanel,
+  ai: AiAgentPanel,
 };
 
 export default function StudioPage() {
-  const apiRef = useRef<DockviewReadyEvent['api'] | null>(null);
+  const apiRef = useRef<any>(null);
 
   const onReady = useCallback((event: DockviewReadyEvent) => {
-    const api = event.api;
-    apiRef.current = api;
+    apiRef.current = event.api;
 
-    // Left: Explorer
-    api.addPanel({
+    const explorerPanel = event.api.addPanel({
       id: 'explorer',
       component: 'explorer',
       title: 'Explorer',
-      position: {
-        direction: 'left',
-      },
     });
 
-    // Center: Code Editor
-    api.addPanel({
+    const editorPanel = event.api.addPanel({
       id: 'editor',
       component: 'editor',
       title: 'Code Editor',
+      position: { referencePanel: explorerPanel, direction: 'right' },
     });
 
-    // Right: Preview
-    api.addPanel({
+    const previewPanel = event.api.addPanel({
       id: 'preview',
       component: 'preview',
       title: 'Preview',
-      position: {
-        direction: 'right',
-        referencePanel: 'editor',
-      },
+      position: { referencePanel: editorPanel, direction: 'right' },
     });
 
-    // Set initial sizes
-    const explorerGroup = api.getPanel('explorer')?.group;
-    const editorGroup = api.getPanel('editor')?.group;
-    const previewGroup = api.getPanel('preview')?.group;
+    const aiPanel = event.api.addPanel({
+      id: 'ai',
+      component: 'ai',
+      title: 'AI Agent',
+      position: { referencePanel: previewPanel, direction: 'right' },
+    });
 
-    if (explorerGroup) {
-      api.getGroup(explorerGroup.id)?.api.setSize({ width: 260 });
-    }
-    if (previewGroup) {
-      api.getGroup(previewGroup.id)?.api.setSize({ width: 420 });
-    }
+    // 비율 설정: Explorer 15%, Editor 40%, Preview 25%, AI 20%
+    event.api.getGroup(explorerPanel.group)?.api.setSize({ width: window.innerWidth * 0.15 });
+    event.api.getGroup(aiPanel.group)?.api.setSize({ width: window.innerWidth * 0.20 });
+    event.api.getGroup(previewPanel.group)?.api.setSize({ width: window.innerWidth * 0.25 });
   }, []);
 
   return (
@@ -98,7 +83,6 @@ export default function StudioPage() {
           className="dockview-theme-dark"
           onReady={onReady}
           components={components}
-          watermarkComponent={() => null}
         />
       </div>
       <StatusBar />
